@@ -1,29 +1,29 @@
-import { lazy,Suspense, useState, useCallback } from "react";
+import { lazy, Suspense, useState, useCallback } from "react";
 import { Canvas } from "@react-three/fiber";
 
 import Loader from "../components/Loader";
 import { socialLinks } from "../constants";
+
+// Lazy load the Fox model safely
 const Fox = lazy(() => import("../models/Fox"));
+
 const Contact = () => {
   const [currentAnimation, setCurrentAnimation] = useState("idle");
 
-  // Memoized event handlers to prevent unnecessary re-renders
   const handleHover = useCallback(() => {
     setCurrentAnimation("walk");
-  
-    // Reset to idle after 1 second
-    setTimeout(() => {
-      setCurrentAnimation("idle");
-    }, 6000);
+    setTimeout(() => setCurrentAnimation("idle"), 6000);
   }, []);
+
   const handleLeave = useCallback(() => setCurrentAnimation("idle"), []);
 
   const handleClick = useCallback((url) => {
     setCurrentAnimation("hit");
-
     setTimeout(() => {
-      window.open(url, "_blank");
-    }, 1500); // Reduced delay for faster execution
+      if (typeof window !== "undefined") {
+        window.open(url, "_blank");
+      }
+    }, 1500);
   }, []);
 
   return (
@@ -34,8 +34,8 @@ const Contact = () => {
           <h1 className="sm:text-5xl text-3xl font-semibold sm:leading-snug font-poppins text-left">
             Get In Touch{" "}
             <span className="bg-gradient-to-r from-[#007CF0] to-[#00DFD8] bg-clip-text text-transparent font-semibold drop-shadow">
-            With Me
-            </span>{" "}
+              With Me
+            </span>
           </h1>
           <p className="text-gray-300 text-lg mt-4 leading-relaxed">
             Feel free to connect with me through my social links below.
@@ -68,7 +68,7 @@ const Contact = () => {
 
         {/* Right Section: 3D Fox Model */}
         <div className="lg:w-1/2 w-full lg:h-auto md:h-[550px] h-[350px]">
-          <Canvas camera={{ position: [0, 0, 5], fov: 75, near: 0.1, far: 1000 }}>
+          <Canvas camera={{ position: [0, 0, 5], fov: 75 }}>
             <directionalLight intensity={2} position={[0, 0, 1]} />
             <ambientLight intensity={0.3} />
             <Suspense fallback={<Loader />}>
@@ -85,13 +85,11 @@ const Contact = () => {
 
       {/* Footer */}
       <footer className="w-full flex flex-col items-center justify-center py-6 border-t border-gray-600 bg-[#0f172a] text-gray-400 text-xl">
-      <p className="text-white font-italic mb-2">habbujayanth@gmail.com</p>
+        <p className="text-white italic mb-2">habbujayanth@gmail.com</p>
         <p className="mb-2">
           © 2025{" "}
-          
           <span className="text-white font-semibold">Jayant Habbu</span>. All rights reserved.
         </p>
-
       </footer>
     </>
   );
