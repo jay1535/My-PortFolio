@@ -29,15 +29,17 @@ It is designed to highlight creativity, skills, and projects with a modern and e
 ### 📸 Screenshots
 
 #### 🏠 Home Page
-![Home](./screenshots/home.png)
+![Home](./public/LandingPage.png)
+
+#### 🏠 About Page
+![Home](./public/About.png)
 
 #### 📂 Projects Section
-![Projects](./screenshots/projects.png)
+![Projects](./public/Projects.png)
 
 #### 📞 Contact Section
-![Contact](./screenshots/contact.png)
+![Contact](./public/Contact.png)
 
-*(Replace these with actual screenshots and place them in `/screenshots/`.)*
 
 ---
 
@@ -62,3 +64,15 @@ npm install gsap
 ```bash
 npm start
 ```
+
+### 👥 Authors & Acknowledgments
+
+This project is developed and maintained by:
+
+- **Jayant Habbu** — [@jay1535](https://github.com/jay1535)
+
+Special thanks to:
+
+- The developers of [Three.js](https://threejs.org/), [GSAP](https://gsap.com/), and [Vercel](https://vercel.com/) for providing the amazing tools that power this application.
+- Everyone who has contributed ideas, feedback, and inspiration to improve **My-Portfolio**!
+
