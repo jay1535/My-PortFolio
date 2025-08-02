@@ -137,14 +137,22 @@ export const socialLinks = [
 ];
 
 export const projects = [
-
-  {
-    iconUrl: summiz,
+   {
+    iconUrl: threads,
     theme: "btn-back-green",
     name: "Mock-IQ 🧑‍💻",
     description:
       'Mock-IQ is an AI-powered mock interview application built using Next.js for a seamless frontend experience and PostgreSQL for efficient data management. It leverages the Gemini AI API to generate dynamic, personalized interview questions and provide real-time feedback based on user responses. The app simulates real interview scenarios across various domains, helping users enhance their communication and problem-solving skills.🚀🧑‍💻',
     link: " https://github.com/jay1535/MOCK-IQ",
+  },
+
+  {
+    iconUrl: summiz,
+    theme: "btn-back-pink",
+    name: "Bolt.new 🧑‍💻",
+    description:
+      'Bolt.new is a fast, collaborative workspace builder inspired by bolt.new, built with Next.js, Convex, Gemini AI, Sandbox, and shadcn/ui. It offers real-time sync, intelligent suggestions, and a sandboxed environment for safe experimentation — all in a lightweight, beautiful, and seamless experience for creators and teams.🚀🧑‍💻',
+    link: " https://github.com/jay1535/Bolt.new",
   },
   {
     iconUrl: threads,
